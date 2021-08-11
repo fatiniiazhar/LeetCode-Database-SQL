@@ -62,7 +62,7 @@ SELECT name FROM salesperson
    WHERE sales_id NOT IN
       (SELECT o.sales_id FROM orders AS o
        JOIN company AS c company ON o.sales_id = c.sales_id
-        WHERE c.name != 'RED');
+        WHERE c.name = 'RED');
         
 
 
