@@ -24,3 +24,7 @@ Consecutive available seats are more than 2(inclusive) seats consecutively avail
 
 SOLUTION:
 
+SELECT DISTINT t1.seat_id FROM cinema AS t1 JOIN cinema AS t2
+ON ABS(t1.seat_id-2,t2.seat_id) =1
+WHERE t1.free ='1' AND t2.free = 1
+ORDER BY t1.seat_id
