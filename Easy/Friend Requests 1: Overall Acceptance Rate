@@ -42,5 +42,8 @@ Explanation: There are 4 unique accepted requests, and there are 5 requests in t
 
 SOLUTION:
 
+SELECT ifnull((round(accepts/requests, 2)),0.0) AS accept_rate 
+FROM
+    (SELECT COUNT(DISTINCT sender_id, sent_to_id) AS requests from friends_request) AS t1,
+    (SELECT COUNT(DISTINCT requester_id,acceptr_id) as accepts FROM request_Accepted) AS t2;
 
- 
