@@ -54,4 +54,4 @@ Result table:
 SOLUTION:
 
 SELECT product_id, SUM(quantity) AS total_quantity
-FROM Product GROUP BY product_id;
+FROM Sales GROUP BY product_id;
