@@ -42,11 +42,19 @@ Result table:
 +------------+--------------+ 
 Note that we do not care about days with zero active users.
 
-SOLUTION:
+SOLUTION 1:
+
+SELECT activity_date AS day , COUNT(DISTINCT user_id) AS active_users
+FROM Activity WHERE  DATEDIFF('2019-07-27',activtiy_date) <30
+GROUP BY activity_date;
+
+
+SOLUTION 2:
+
 
 SELECT activity_date AS day , COUNT(DISTINCT user_id) AS active users 
 FROM Activity
 WHERE activity_date BETWEEN DATEADD('2019-07-27',INTERVAL -29 DAY) AND '2019-07-27'
-GROUP BY activity_date
+GROUP BY activity_date;
 
 
