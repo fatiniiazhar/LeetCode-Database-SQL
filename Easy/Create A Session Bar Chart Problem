@@ -56,4 +56,4 @@ WHERE duration >= 600 AND duration <900
 UNION
 SELECT '15 or more' AS bin, COUNT(1) AS total
 FROM Sessions
-WHERE duration >= 900
+WHERE duration >= 900;
